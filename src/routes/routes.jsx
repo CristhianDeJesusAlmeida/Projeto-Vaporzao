@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { HomePage } from "../pages/HomePage"
 import {LojaPage} from "../pages/LojaPage"
 import {PromocoesPage} from "../pages/PromocoesPage"
@@ -10,10 +10,10 @@ export function AppRoutes() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element = {<HomePage />} />
-                <Route path="loja" element = {<LojaPage />} />
-                <Route path="promoções" element = {<PromocoesPage />} />
-                <Route path="sobre" element = {<SobrePage/>}/>
-                <Route path="*" element = {<NotFoundPage />} />
+                <Route path="/loja" element = {<LojaPage />} />
+                <Route path="/Promoções" element = {<PromocoesPage />} />
+                <Route path="/Sobre" element = {<SobrePage/>}/>
+                <Route path="/*" element = {<NotFoundPage />} />
             </Routes>
         </BrowserRouter>
     )
