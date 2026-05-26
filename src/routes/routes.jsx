@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { Menu } from "../components/Navbar";
 import { HomePage } from "../pages/HomePage";
 import { LojaPage } from "../pages/LojaPage";
 import { PromocoesPage } from "../pages/PromocoesPage";
@@ -8,6 +9,7 @@ import { NotFoundPage } from "../pages/NotFoundPage";
 export function AppRoutes() {
   return (
     <BrowserRouter>
+    <Menu />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/loja" element={<LojaPage />} />

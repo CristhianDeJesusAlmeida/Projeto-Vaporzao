@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import "./Home.css";
 import {Search,ShoppingCart,User,Gamepad2,Swords,Backpack,Car,Users,Trophy,MoreHorizontal,Shield,Tag,Zap,Headphones,} from "lucide-react";
 
@@ -14,6 +15,12 @@ import {Search,ShoppingCart,User,Gamepad2,Swords,Backpack,Car,Users,Trophy,MoreH
 
 
 export const HomePage = () => {
+    const navigate = useNavigate();
+
+    const goToLoja = () =>{
+        navigate("/loja");
+    }
+
     return( 
          <div className="home">
 
@@ -31,7 +38,7 @@ export const HomePage = () => {
             e ofertas exclusivas.
           </p>
 
-          <button>Explorar loja</button>
+          <button onClick={goToLoja}>Explorar loja</button>
         </div>
 
         <div className="hero-image">
@@ -45,8 +52,6 @@ export const HomePage = () => {
       <section className="categories">
         <div className="categories-top">
           <h2>Categorias</h2>
-
-          <a href="">Ver todas →</a>
         </div>
 
         <div className="categories-grid">
