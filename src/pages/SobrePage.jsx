@@ -1,0 +1,7 @@
+import "./sobre.css"
+
+export const SobrePage = () =>{
+    return(
+        <h1>Sobre Page</h1>
+    )
+}
