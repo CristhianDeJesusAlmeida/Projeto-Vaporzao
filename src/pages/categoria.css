@@ -1,0 +1,120 @@
+/* Container Principal */
+.categorias-container {
+    background-color: #0b071e; /* Fundo escuro do Figma */
+    min-height: 100vh;
+    padding: 40px 8%;
+    color: white;
+    font-family: sans-serif;
+}
+
+/* Cabeçalho e Breadcrumb */
+.categorias-header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.categorias-header .breadcrumb {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.categorias-header .breadcrumb span {
+    color: #8b5cf6; /* Roxo do Vaporzão */
+}
+
+.categorias-header .subtitulo {
+    font-size: 20px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+/* Grid de Cards */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Card Individual (Horizontal) */
+.categoria-card {
+    background-color: #131129; /* Fundo cinza-escuro do card */
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.2s, background-color 0.2s;
+    border: 1px solid #1f1a3a;
+}
+
+.categoria-card:hover {
+    transform: translateY(-4px);
+    background-color: #1a1635;
+}
+
+/* Wrapper do Ícone Redondo */
+.categoria-icon-wrapper {
+    background-color: #1c183a;
+    color: #8b5cf6; /* Ícone Roxo */
+    padding: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Informações do Card */
+.categoria-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.categoria-info h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.categoria-info .jogos-disponiveis {
+    font-size: 13px;
+    color: #10b981; /* Verde brilhante para destacar */
+    font-weight: 500;
+}
+
+.categoria-info .categoria-desc {
+    font-size: 14px;
+    color: #9ca3af;
+    margin: 4px 0 12px 0;
+    line-height: 1.4;
+}
+
+/* Botão do Card */
+.btn-ver-jogos {
+    background-color: #211947;
+    color: white;
+    border: 1px solid #4c1d95;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    align-self: flex-start;
+    transition: background-color 0.2s;
+}
+
+.btn-ver-jogos:hover {
+    background-color: #6d28d9;
+}
+
+/* Mensagens de Carregamento e Erro */
+.status-msg {
+    text-align: center;
+    margin-top: 60px;
+    color: #9ca3af;
+}
+
+.status-msg.erro {
+    color: #ef4444;
+}

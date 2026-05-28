@@ -1,0 +1,100 @@
+/* Container Principal da Loja */
+.loja-container {
+    background-color: #0b071e; /* Fundo escuro idêntico ao Figma */
+    min-height: 100vh;
+    padding: 40px 8%;
+    color: white;
+    font-family: sans-serif;
+}
+
+/* Título da Página */
+.loja-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Grade de Jogos (Responsive Grid) */
+.jogos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+/* Card de Jogo Individual */
+.jogo-card {
+    background-color: #131129; /* Fundo cinza-escuro do card */
+    border: 1px solid #1f1a3a;
+    border-radius: 16px;
+    overflow: hidden; /* Garante que a imagem respeite o arredondamento */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.jogo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem da Capa do Jogo */
+.jogo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Recorta a imagem proporcionalmente sem amassar */
+    background-color: #1c183a; /* Fundo reserva enquanto carrega */
+}
+
+/* Bloco de Informações Internas do Card */
+.jogo-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço disponível empurrando o botão para baixo */
+}
+
+.jogo-info h3 {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Etiqueta da Categoria (Badge) */
+.jogo-categoria {
+    background-color: #1c183a;
+    color: #8b5cf6; /* Texto roxo */
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    align-self: flex-start; /* Ajusta o tamanho da badge apenas ao tamanho do texto */
+    margin-bottom: 16px;
+}
+
+/* Preço do Jogo */
+.jogo-preco {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 16px 0;
+}
+
+/* Botão Comprar */
+.btn-comprar {
+    background-color: #6d28d9; /* Roxo principal */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: auto; /* Cola o botão definitivamente na base do card */
+    transition: background-color 0.2s;
+}
+
+.btn-comprar:hover {
+    background-color: #7c3aed; /* Roxo ligeiramente mais claro no hover */
+}

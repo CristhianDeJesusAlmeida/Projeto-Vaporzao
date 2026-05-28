@@ -4,6 +4,7 @@ import { HomePage } from "../pages/HomePage";
 import { LojaPage } from "../pages/LojaPage";
 import { PromocoesPage } from "../pages/PromocoesPage";
 import { SobrePage } from "../pages/SobrePage";
+import { CategoriaPage } from "../pages/CategoriasPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 
 export function AppRoutes() {
@@ -11,11 +12,12 @@ export function AppRoutes() {
     <BrowserRouter>
     <Menu />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/loja" element={<LojaPage />} />
-        <Route path="/promocoes" element={<PromocoesPage />} />
-        <Route path="/sobre" element={<SobrePage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/" element= {<HomePage />} />
+        <Route path="/loja" element= {<LojaPage />} />
+        <Route path="/promocoes" element= {<PromocoesPage />} />
+        <Route path="/sobre" element= {<SobrePage />} />
+        <Route path="/categorias" element ={<CategoriaPage />} />
+        <Route path="*" element= {<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
