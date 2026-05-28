@@ -1,0 +1,302 @@
+.sobre-page {
+  min-height: 100vh;
+  background: #070312;
+  color: white;
+}
+
+.sobre-hero {
+  padding: 55px 75px;
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #211a35;
+}
+
+.sobre-icon {
+  width: 64px;
+  height: 64px;
+  background: #7045ea;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-hero h1 {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.sobre-hero h3 {
+  color: #8b5cf6;
+  margin-bottom: 14px;
+}
+
+.sobre-hero p {
+  max-width: 620px;
+  color: #9b96ad;
+  line-height: 1.6;
+}
+
+.sobre-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sobre-actions button {
+  width: 170px;
+  height: 44px;
+  background: #7045ea;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sobre-actions .secondary {
+  background: #171327;
+  border: 1px solid #302747;
+  color: #aaa4bb;
+}
+
+.sobre-stats {
+  background: #151127;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 22px 70px;
+}
+
+.sobre-stats div {
+  text-align: center;
+  border-right: 1px solid #2b2447;
+}
+
+.sobre-stats div:last-child {
+  border-right: none;
+}
+
+.sobre-stats strong {
+  display: block;
+  font-size: 36px;
+}
+
+.sobre-stats .purple {
+  color: #8b5cf6;
+}
+
+.sobre-stats span {
+  color: #777188;
+}
+
+.sobre-cards {
+  padding: 36px 75px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.sobre-card {
+  background: #151127;
+  border: 1px solid #221a35;
+  border-radius: 14px;
+  padding: 26px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #2b2447;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+.card-title p,
+.sobre-card p {
+  color: #9b96ad;
+}
+
+.card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b5cf6;
+}
+
+.purple-bg {
+  background: #2a1850;
+}
+
+.green-bg {
+  background: #042c16;
+  color: #00d66b;
+}
+
+.sobre-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #9b96ad;
+}
+
+.sobre-card li::before {
+  content: "●";
+  color: #7045ea;
+  margin-right: 12px;
+}
+
+.team {
+  padding: 0 75px 22px;
+}
+
+.team h2 {
+  margin-bottom: 14px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.team-card {
+  background: #151127;
+  border: 1px solid #221a35;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.avatar.purple { background: #3b2374; color: #a78bfa; }
+.avatar.blue { background: #062b3d; color: #38bdf8; }
+.avatar.green { background: #063815; color: #22c55e; }
+.avatar.pink { background: #3a143f; color: #f472e6; }
+.avatar.yellow { background: #3d2f05; color: #facc15; }
+
+.team-card h3 {
+  font-size: 15px;
+}
+
+.team-card p {
+  font-size: 12px;
+}
+
+.team-card span {
+  color: #777188;
+  font-size: 12px;
+}
+
+.team-card small {
+  display: block;
+  background: #4c2797;
+  width: 16px;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 8px;
+}
+
+.purple { color: #8b5cf6; }
+.blue { color: #00b8ff; }
+.green { color: #00d66b; }
+.pink { color: #f472e6; }
+.yellow { color: #ffd43b; }
+
+.contact-bar {
+  margin: 0 75px;
+  background: #151127;
+  border: 1px solid #302747;
+  border-radius: 9px;
+  padding: 10px 28px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.4fr 1.5fr;
+  align-items: center;
+  color: #9b96ad;
+  font-size: 14px;
+}
+
+.contact-bar div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-bar svg {
+  color: #8b5cf6;
+}
+
+.socials button {
+  background: #4c2797;
+  color: #c4a7ff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-weight: bold;
+}
+
+footer {
+  border-top: 1px solid #211a35;
+  margin-top: 8px;
+  padding: 14px;
+  text-align: center;
+  color: #5f596f;
+  font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+  .sobre-cards,
+  .team-grid,
+  .sobre-stats,
+  .contact-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-stats div {
+    border-right: none;
+    margin-bottom: 20px;
+  }
+
+  .contact-bar {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sobre-hero,
+  .sobre-cards,
+  .team,
+  .sobre-stats {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sobre-hero {
+    flex-direction: column;
+  }
+
+  .sobre-hero h1 {
+    font-size: 34px;
+  }
+
+  .contact-bar {
+    margin: 0 20px;
+  }
+}
