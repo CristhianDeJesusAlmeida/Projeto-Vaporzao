@@ -124,7 +124,7 @@ export const SobrePage = () =>{
       <section className="contact-bar">
         <div>
           <Mail size={15} />
-          contato@gamestore.com.br
+          contato@Vaporzaoestore.com.br
         </div>
 
         <div>
@@ -139,15 +139,12 @@ export const SobrePage = () =>{
 
         <div className="socials">
           Redes sociais:
-          <button>Twitter</button>
-          <button>Instagram</button>
-          <button>Discord</button>
-          <button>TikTok</button>
+        
         </div>
       </section>
 
       <footer>
-        © 2026 GameStore. Todos os direitos reservados. • Termos de Uso • Política de Privacidade
+        © 2026 VaporzãoStore. Todos os direitos reservados. • Termos de Uso • Política de Privacidade
       </footer>
     </div>
     )
