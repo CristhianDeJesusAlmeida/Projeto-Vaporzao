@@ -26,7 +26,6 @@ export const Menu = () => {
             <nav className="navbar-links">
                 <Link to = "/">Início</Link>
                 <Link to = "/loja">Loja</Link>
-                <Link to = "/promocoes">Promoções</Link>
                 <Link to = "/categorias">Categorias</Link>
                 <Link to = "/sobre">Sobre</Link>
             </nav>
