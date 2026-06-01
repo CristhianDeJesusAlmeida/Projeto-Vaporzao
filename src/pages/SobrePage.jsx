@@ -4,7 +4,7 @@ import {Calendar,Gem,ShieldCheck,Mail,Phone,MapPin,} from "lucide-react";
 
 const equipe = [
   { nome: "Flavio", cargo: "CEO & Fundador", local: "Minas Gerais, BR", iniciais: "F", cor: "purple" },
-  { nome: "Cristhian de Jesus", cargo: "CTO", local: "Minas Gerais, BR", iniciais: "CJ", cor: "blue" },
+  { nome: "Cristhian de Jesus", cargo: "Programmer", local: "Minas Gerais, BR", iniciais: "CJ", cor: "blue" },
   { nome: "Pedro Augusto", cargo: "Head de Design", local: "Minas Gerai, BR", iniciais: "PA", cor: "green" },
   { nome: "Carlos Eduardo", cargo: "Head de Marketing", local: "Minas Gerais, BR", iniciais: "CA", cor: "pink" },
   { nome: "Mateus", cargo: "Head de Suporte", local: "Minas Gerais, BR", iniciais: "M", cor: "yellow" },

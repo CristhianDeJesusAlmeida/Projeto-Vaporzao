@@ -17,6 +17,10 @@ export const Menu = () => {
         }
     };
 
+    const logar = (event) => {
+        navigate("/login")
+    }
+
     return (
         <header className="navbar-header">
             <div className="navbar-brand">
@@ -42,7 +46,7 @@ export const Menu = () => {
             </div>
 
             <div className="navbar-actions">
-                <button className="icon-btn"><User size={22} /></button>
+                <button className="icon-btn"><User size={22} onClick={logar}/></button>
                 <button className="icon-btn cart-btn">
                     <ShoppingCart size={22} />
                     <span className="cart-badge">0</span>
