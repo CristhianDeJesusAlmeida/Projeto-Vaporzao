@@ -1,5 +1,5 @@
 import { useForm } from "../hooks/useForm";
-import {LoginToken} from "../components/LoginToken"
+import { loginToken } from "../components/LoginToken"
 
 export const LoginPage = () => {
 
@@ -7,25 +7,27 @@ export const LoginPage = () => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        <LoginToken />
+        
+        loginToken(form.matricula, form.password);
     }
 
     return (
         <form onSubmit={handleClick}>
             <input
-                type="matricula"
                 name="matricula"
-                value={form}
-                pattern="^d{2}-\^d{5}$"
+                value={form ?.matricula || ""}
+                pattern="\d{2}-\d{5}"
                 onChange={onChange}
                 placeholder="matricula" />
 
             <input 
-                type="passowrd"
-                name="passowrd"
+                type="password"
+                name="password"
                 onChange={onChange}
-                placeholder="senha"/>
-            <button>Fazer Login</button>
+                value={form?.password || ""}
+                placeholder="senha"
+                autoComplete="off"/>
+            <button type="submit">Fazer Login</button>
         </form>
     )
 }

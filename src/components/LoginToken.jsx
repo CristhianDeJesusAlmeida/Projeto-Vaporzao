@@ -1,18 +1,14 @@
 import { api } from "../services/api";
 import { useState } from "react";
-export const LoginToken = () => {
-    
-    const [matricula, setMatricula] = useState("");
-    const [password, setPassword] = useState("");
 
-    const login = () =>{
+export const loginToken = (matricula,password) => {
+
         const body = {
             matricula: matricula,
-            password: password
+            senha: password
         }
 
-        api.post("/login", body).then(response => {
+        api.post("/auth/login", body).then(response => {
             window.localStorage.setItem("token", response.data.token);
         }).catch(err =>{"Você errou o seu Login tente novamente", err})
-    }
 };

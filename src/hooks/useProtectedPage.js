@@ -1,15 +1,16 @@
 import { useEffect } from "react";
-import { useHistory } from "react-router"
+import { useNavigate } from "react-router"
 
 export const useProtectedPage = () => {
     
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = window.localStorage.getItem('token')
-    }, [history])
 
-    if (token === null) {
-        history.push('/login')
+        if (token === null) {
+        navigate('/login')
     }
+
+    }, [navigate])
 }
