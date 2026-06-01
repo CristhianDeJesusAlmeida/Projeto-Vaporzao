@@ -1,3 +1,5 @@
+import "./login.css"
+
 import { useForm } from "../hooks/useForm";
 import { loginToken } from "../components/LoginToken"
 
@@ -12,7 +14,7 @@ export const LoginPage = () => {
     }
 
     return (
-        <form onSubmit={handleClick}>
+        <form className="login-form" onSubmit={handleClick}>
             <input
                 name="matricula"
                 value={form ?.matricula || ""}
@@ -31,4 +33,3 @@ export const LoginPage = () => {
         </form>
     )
 }
-
