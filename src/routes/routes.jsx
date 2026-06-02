@@ -5,6 +5,8 @@ import { LojaPage } from "../pages/LojaPage";
 import { SobrePage } from "../pages/SobrePage";
 import { CategoriaPage } from "../pages/CategoriasPage";
 import { LoginPage } from "../pages/LoginPage";
+import { PerfilPage } from "../pages/PerfilPage";
+import { BibliotecaPage } from "../pages/BibliotecaPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 
 
@@ -18,6 +20,8 @@ export function AppRoutes() {
         <Route path="/sobre" element= {<SobrePage />} />
         <Route path="/categorias" element ={<CategoriaPage />} />
         <Route path="/login" element = {<LoginPage />} />
+        <Route path="/perfil" element = {<PerfilPage />} />
+        <Route path="/perfil/biblioteca" element = {<BibliotecaPage/>} />
         <Route path="*" element= {<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

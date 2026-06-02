@@ -8,9 +8,14 @@ export const useRequestData = (endpoint) => {
 
     useEffect(() => {
         const buscarDados = async () => {
+            const token = window.localStorage.getItem("token");
             setIsLoading(true);
             try{
-                const response = await api.get(endpoint);
+                const response = await api.get(endpoint,{
+                    headers: {
+                        token: token
+                    }
+                });
                 setData(response.data);
             } catch (err) {
                 setError(err.message);
