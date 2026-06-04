@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { Search, ShoppingCart, User } from "lucide-react";
-import "./Navbar.css";
+import { useState } from "react"
+import { Link, useNavigate } from "react-router"
+import { Search, ShoppingCart, User } from "lucide-react"
+import "./Navbar.css"
 
 export const Menu = () => {
-    const [pesquisa, setPesquisa] = useState("");
-    const navigate = useNavigate();
+    const [pesquisa, setPesquisa] = useState("")
+    const navigate = useNavigate()
 
     const lidarComPesquisa = (event) => {
         if (event.key === "Enter") {
             if (pesquisa.trim() !== "") {
-                navigate(`/loja?busca=${pesquisa.trim()}`);
+                navigate(`/loja?busca=${pesquisa.trim()}`)
             } else {
-                navigate("/loja");
+                navigate("/loja")
             }
         }
-    };
+    }
 
-    const logar = (event) => {
-        {window.localStorage.getItem("token") && navigate("/perfil") || navigate("/login")}
+    const logar = () => {
+        window.localStorage.getItem("token") ? navigate("/perfil") : navigate("/login")
     }
 
     return (
@@ -28,10 +28,10 @@ export const Menu = () => {
             </div>
 
             <nav className="navbar-links">
-                <Link to = "/">Início</Link>
-                <Link to = "/loja">Loja</Link>
-                <Link to = "/categorias">Categorias</Link>
-                <Link to = "/sobre">Sobre</Link>
+                <Link to="/">Início</Link>
+                <Link to="/loja">Loja</Link>
+                <Link to="/categorias">Categorias</Link>
+                <Link to="/sobre">Sobre</Link>
             </nav>
 
             <div className="navbar-search">
@@ -46,12 +46,12 @@ export const Menu = () => {
             </div>
 
             <div className="navbar-actions">
-                <button className="icon-btn"><User size={22} onClick={logar}/></button>
+                <button className="icon-btn" onClick={logar}><User size={22}/></button>
                 <button className="icon-btn cart-btn">
                     <ShoppingCart size={22} />
                     <span className="cart-badge">0</span>
                 </button>
             </div>
         </header>
-    );
-};
+    )
+}

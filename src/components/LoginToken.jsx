@@ -1,13 +1,17 @@
 import { api } from "../services/api";
 
-export const loginToken = (matricula,password) => {
+export const loginToken = (matricula, password) => {
+    const body = {
+        matricula: matricula,
+        senha: password
+    }
 
-        const body = {
-            matricula: matricula,
-            senha: password
-        }
-
-        api.post("/auth/login", body).then(response => {
+    return api.post("/auth/login", body)
+        .then(response => {
             window.localStorage.setItem("token", response.data.token);
-        }).catch(err =>{"Você errou o seu Login tente novamente", err})
+            return response;
+        })
+        .catch(err => {
+            return Promise.reject(err);
+        });
 };
