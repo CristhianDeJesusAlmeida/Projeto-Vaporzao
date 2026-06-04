@@ -98,3 +98,166 @@
 .btn-comprar:hover {
     background-color: #7c3aed; /* Roxo ligeiramente mais claro no hover */
 }
+
+.loja-status {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.loja-status.erro {
+  color: red;
+}
+
+.loja-empty {
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.loja-empty h2 {
+  font-size: 28px;
+  color: #8b5cf6;
+  margin-bottom: 15px;
+}
+
+.loja-empty p {
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+.loja-hero-random {
+  margin: 30px auto;
+  width: 90%;
+  min-height: 320px;
+
+  background: linear-gradient(135deg, #16072c, #070312);
+  border: 1px solid #302747;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 35px;
+  gap: 30px;
+}
+
+.hero-random-info {
+  max-width: 520px;
+}
+
+.hero-random-info span {
+  color: #8b5cf6;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.hero-random-info h1 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.hero-genero {
+  color: #c4b5fd;
+  margin-bottom: 12px;
+}
+
+.hero-desc {
+  color: #9ca3af;
+  margin-bottom: 18px;
+}
+
+.hero-random-info strong {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.hero-random-info button {
+  background: #7045ea;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 13px 26px;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero-random-info button:hover {
+  background: #8b5cf6;
+}
+
+.hero-random-image img {
+  width: 230px;
+  height: 300px;
+
+  object-fit: cover;
+  border-radius: 16px;
+
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.hero-placeholder {
+  width: 230px;
+  height: 300px;
+
+  background: #171327;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 70px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 40px 0;
+}
+
+.pagination button {
+  background: #7045ea;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 18px;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pagination button:hover {
+  background: #8b5cf6;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .loja-hero-random {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-random-info h1 {
+    font-size: 32px;
+  }
+}
