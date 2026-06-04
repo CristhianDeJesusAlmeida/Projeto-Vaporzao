@@ -18,7 +18,7 @@ export const Menu = () => {
     };
 
     const logar = (event) => {
-        navigate("/login")
+        {window.localStorage.getItem("token") && navigate("/perfil") || navigate("/login")}
     }
 
     return (

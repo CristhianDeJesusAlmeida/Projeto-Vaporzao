@@ -7,6 +7,7 @@ import { CategoriaPage } from "../pages/CategoriasPage";
 import { LoginPage } from "../pages/LoginPage";
 import { PerfilPage } from "../pages/PerfilPage";
 import { BibliotecaPage } from "../pages/BibliotecaPage";
+import { CriarJogoPage } from "../pages/CriarJogoPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 
 
@@ -21,7 +22,8 @@ export function AppRoutes() {
         <Route path="/categorias" element ={<CategoriaPage />} />
         <Route path="/login" element = {<LoginPage />} />
         <Route path="/perfil" element = {<PerfilPage />} />
-        <Route path="/perfil/biblioteca" element = {<BibliotecaPage/>} />
+        <Route path="/perfil/biblioteca" element = {<BibliotecaPage />} />
+        <Route path="/perfil/biblioteca/criar-jogos" element = {<CriarJogoPage />} />
         <Route path="*" element= {<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
