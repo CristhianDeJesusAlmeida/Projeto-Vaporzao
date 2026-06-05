@@ -23,17 +23,40 @@ export const PerfilPage = () => {
     }
 
     return (
+  <div className="perfil-page">
+    {isLoading && <p className="perfil-loading">Carregando dados de usuário...</p>}
 
-        <>
+    {error && <p className="perfil-error">Erro: {error}</p>}
 
-            { isLoading && <p style={{ color: "white", textAlign: "center" }}> Carregando dados de usuários </p> };
-            { error && <p style={{ color: "red", textAlign: "center" }}>Erro: {error}</p> };
+    {!isLoading && !error && data && (
+      <div className="perfil-card">
+        <div className="perfil-avatar">
+          {data?.nome
+            ?.split(" ")
+            .map((nome) => nome[0])
+            .slice(0, 2)
+            .join("")}
+        </div>
 
-            <h3> {data?.nome} </h3>
-            <h3> {data?.role} </h3>
+        <h2 className="perfil-nome">{data?.nome}</h2>
 
-            <button onClick={goToBiblioteca}>Biblioteca</button>
-            <button onClick={handleLogout}>Deslogar</button>
-        </>
-    )
+        <p className="perfil-matricula">
+          Matrícula: <span>{data?.matricula}</span>
+        </p>
+
+        <p className="perfil-role">{data?.role}</p>
+
+        <div className="perfil-divider"></div>
+
+        <button className="btn-biblioteca" onClick={goToBiblioteca}>
+          Biblioteca
+        </button>
+
+        <button className="btn-logout" onClick={handleLogout}>
+          Sair da conta
+        </button>
+      </div>
+    )}
+  </div>
+);
 }
