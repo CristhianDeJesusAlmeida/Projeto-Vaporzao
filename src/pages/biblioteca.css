@@ -1,0 +1,222 @@
+.biblioteca-page {
+  min-height: 100vh;
+  background: #070312;
+  color: white;
+  padding-bottom: 50px;
+}
+
+.biblioteca-header {
+  padding: 28px 55px 18px;
+  border-bottom: 1px solid #211a35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.biblioteca-header h1 {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.biblioteca-header h1 span {
+  background: #7045ea;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.biblioteca-header p {
+  color: #777188;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.btn-criar-jogo {
+  height: 40px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 8px;
+  background: #7045ea;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.biblioteca-filters {
+  padding: 14px 55px;
+  border-bottom: 1px solid #211a35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.biblioteca-filters input {
+  width: 360px;
+  height: 38px;
+  background: #0d0a1b;
+  border: 1px solid #302747;
+  border-radius: 8px;
+  padding: 0 14px;
+  color: white;
+}
+
+.biblioteca-filters select {
+  height: 38px;
+  background: #171327;
+  border: 1px solid #302747;
+  border-radius: 8px;
+  color: #c4b5fd;
+  padding: 0 18px;
+}
+
+.biblioteca-lista {
+  padding: 22px 55px 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.biblioteca-loading,
+.biblioteca-error,
+.biblioteca-exclusao-error,
+.biblioteca-atualizacao-error {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.biblioteca-error,
+.biblioteca-exclusao-error,
+.biblioteca-atualizacao-error {
+  color: #ff5c5c;
+}
+
+.alterar-jogo-container {
+  width: min(700px, 90%);
+  margin: 40px auto;
+  background: #151127;
+  border: 1px solid #302747;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.alterar-jogo-container h2 {
+  margin-bottom: 22px;
+  color: white;
+}
+
+.alterar-jogo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alterar-jogo-form label {
+  color: #c4b5fd;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.alterar-jogo-form input,
+.alterar-jogo-form textarea {
+  width: 100%;
+  background: #0d0a1b;
+  border: 1px solid #302747;
+  border-radius: 8px;
+  color: white;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.alterar-jogo-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.alterar-jogo-form input:focus,
+.alterar-jogo-form textarea:focus {
+  border-color: #7045ea;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.btn-salvar,
+.btn-cancelar {
+  height: 42px;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-salvar {
+  background: #7045ea;
+  color: white;
+  border: none;
+}
+
+.btn-cancelar {
+  background: transparent;
+  color: #ff5c5c;
+  border: 1px solid #ff5c5c;
+}
+
+.biblioteca-empty {
+  min-height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.biblioteca-empty h2 {
+  color: #8b5cf6;
+  margin-bottom: 10px;
+}
+
+.biblioteca-empty p {
+  color: #9b96ad;
+  margin-bottom: 18px;
+}
+
+.biblioteca-empty button {
+  background: #7045ea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .biblioteca-header,
+  .biblioteca-filters {
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .biblioteca-filters input {
+    width: 100%;
+  }
+
+  .biblioteca-lista {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}

@@ -82,6 +82,9 @@ export const LojaPage = () => {
             <strong>R$ {jogoAleatorio.preco}</strong>
 
             <button>Comprar agora</button>
+            <button className="btn-detalhes"onClick={() => navigate(`/jogo/${jogo.id}`)}>
+              Ver detalhes
+            </button>
           </div>
 
           <div className="hero-random-image">
@@ -137,6 +140,10 @@ export const LojaPage = () => {
                   <button className="btn-comprar">
                     Comprar
                   </button>
+                  <button className="btn-detalhes"onClick={() => navigate(`/jogo/${jogo.id}`)}>
+                    Ver detalhes
+                  </button>
+
                 </div>
               </div>
             ))}

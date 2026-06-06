@@ -93,60 +93,157 @@ export const BibliotecaPage = () => {
     const nenhumJogoCriado = !isLoading && !error && !jogoSendoEditado && (!bibliotecaData || bibliotecaData.length === 0)
     const exibirFormularioEdicao = !isLoading && !error && jogoSendoEditado
 
-    return(
-        <>
-            {isLoading && <p className="biblioteca-loading">Carregando Biblioteca....</p>}
-            
-            {error && <p className="biblioteca-error">Error: {error}</p>}
+   return (
+  <main className="biblioteca-page">
+    <section className="biblioteca-header">
+      <div>
+        <h1>
+          Minha Biblioteca
+          <span>{bibliotecaData?.length || 0} jogos</span>
+        </h1>
 
-            {exclusaoErro && <p className="biblioteca-exclusao-error">Erro ao excluir: {exclusaoErro}</p>}
-            
-            {atualizacaoErro && <p className="biblioteca-atualizacao-error">Erro ao alterar: {atualizacaoErro}</p>}
+        <p>Início / Biblioteca</p>
+      </div>
 
-            {exibirLista && (
-                <>
-                    <h2>Sua Biblioteca</h2>
-                    <button onClick={goToCriarJogo}>Criar um jogo</button>
-                    <p>Seus jogos Criados</p>
-                    
-                    <div className="biblioteca-grid">
-                        {bibliotecaData.map((jogo) => (
-                            <JogoCard 
-                                key={jogo.id} 
-                                jogo={jogo} 
-                                formatReleaseDate={formatReleaseDate}
-                                onDelete={handleDelete}
-                                onEdit={handleStartEdit}
-                            />
-                        ))}
-                    </div>
-                </>
-            )}
+      {!jogoSendoEditado && (
+        <button className="btn-criar-jogo" onClick={goToCriarJogo}>
+          Criar jogo
+        </button>
+      )}
+    </section>
 
-            {exibirFormularioEdicao && (
-                <div className="alterar-jogo-container">
-                    <h2>Alterar Jogo</h2>
-                    <form onSubmit={onSubmitForm}>
-                        <input name="titulo" value={form.titulo} onChange={onChangeForm} required />
-                        <textarea name="descricao" value={form.descricao} onChange={onChangeForm} required />
-                        <input type="number" step="0.01" name="preco" value={form.preco} onChange={onChangeForm} required />
-                        <input name="desenvolvedora" value={form.desenvolvedora} onChange={onChangeForm} required />
-                        <input type="date" name="lancamento" value={form.lancamento} onChange={onChangeForm} required />
-                        <input name="capaUrl" value={form.capaUrl} onChange={onChangeForm} required />
-                        <input name="generoIds" value={form.generoIds} onChange={onChangeForm} required />
-                        <button type="submit">Salvar Alterações</button>
-                        <button type="button" onClick={() => setJogoSendoEditado(null)}>Cancelar</button>
-                    </form>
-                </div>
-            )}
+    {isLoading && (
+      <p className="biblioteca-loading">Carregando Biblioteca...</p>
+    )}
 
-            {nenhumJogoCriado && (
-                <>
-                    <h2>Sua Biblioteca</h2>
-                    <button onClick={goToCriarJogo}>Criar um jogo</button>
-                    <p className="biblioteca-empty">Nenhum jogo criado encontrado.</p>
-                </>
-            )}
-        </>
-    )
+    {error && <p className="biblioteca-error">Error: {error}</p>}
+
+    {exclusaoErro && (
+      <p className="biblioteca-exclusao-error">
+        Erro ao excluir: {exclusaoErro}
+      </p>
+    )}
+
+    {atualizacaoErro && (
+      <p className="biblioteca-atualizacao-error">
+        Erro ao alterar: {atualizacaoErro}
+      </p>
+    )}
+
+    {exibirLista && (
+      <>
+        <section className="biblioteca-filters">
+          <input type="text" placeholder="Buscar na biblioteca..." />
+
+          <select>
+            <option>A - Z</option>
+            <option>Z - A</option>
+          </select>
+        </section>
+
+        <section className="biblioteca-lista">
+          {bibliotecaData.map((jogo) => (
+            <JogoCard
+              key={jogo.id}
+              jogo={jogo}
+              formatReleaseDate={formatReleaseDate}
+              onDelete={handleDelete}
+              onEdit={handleStartEdit}
+            />
+          ))}
+        </section>
+      </>
+    )}
+
+    {exibirFormularioEdicao && (
+      <section className="alterar-jogo-container">
+        <h2>Alterar Jogo</h2>
+
+        <form onSubmit={onSubmitForm} className="alterar-jogo-form">
+          <label>Título</label>
+          <input
+            name="titulo"
+            value={form.titulo}
+            onChange={onChangeForm}
+            required
+          />
+
+          <label>Descrição</label>
+          <textarea
+            name="descricao"
+            value={form.descricao}
+            onChange={onChangeForm}
+            required
+          />
+
+          <label>Preço</label>
+          <input
+            type="number"
+            step="0.01"
+            name="preco"
+            value={form.preco}
+            onChange={onChangeForm}
+            required
+          />
+
+          <label>Desenvolvedora</label>
+          <input
+            name="desenvolvedora"
+            value={form.desenvolvedora}
+            onChange={onChangeForm}
+            required
+          />
+
+          <label>Lançamento</label>
+          <input
+            type="date"
+            name="lancamento"
+            value={form.lancamento}
+            onChange={onChangeForm}
+            required
+          />
+
+          <label>URL da capa</label>
+          <input
+            name="capaUrl"
+            value={form.capaUrl}
+            onChange={onChangeForm}
+            required
+          />
+
+          <label>IDs dos gêneros</label>
+          <input
+            name="generoIds"
+            value={form.generoIds}
+            onChange={onChangeForm}
+            required
+          />
+
+          <div className="form-actions">
+            <button type="submit" className="btn-salvar">
+              Salvar Alterações
+            </button>
+
+            <button
+              type="button"
+              className="btn-cancelar"
+              onClick={() => setJogoSendoEditado(null)}
+            >
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </section>
+    )}
+
+    {nenhumJogoCriado && (
+      <section className="biblioteca-empty">
+        <h2>Nenhum jogo criado encontrado.</h2>
+        <p>Crie seu primeiro jogo para ele aparecer aqui.</p>
+
+        <button onClick={goToCriarJogo}>Criar um jogo</button>
+      </section>
+    )}
+  </main>
+);
 }

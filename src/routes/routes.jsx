@@ -8,7 +8,9 @@ import { LoginPage } from "../pages/LoginPage";
 import { PerfilPage } from "../pages/PerfilPage";
 import { BibliotecaPage } from "../pages/BibliotecaPage";
 import { CriarJogoPage } from "../pages/CriarJogoPage";
+import { DetalheJogoPage } from "../pages/DetalheJogoPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
+
 
 
 export function AppRoutes() {
@@ -25,6 +27,7 @@ export function AppRoutes() {
         <Route path="/perfil/biblioteca" element = {<BibliotecaPage />} />
         <Route path="/perfil/biblioteca/criar-jogos" element = {<CriarJogoPage />} />
         <Route path="*" element= {<NotFoundPage />} />
+        <Route path="/jogo/:id" element={<DetalheJogoPage />} />
       </Routes>
     </BrowserRouter>
   );
