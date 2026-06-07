@@ -82,7 +82,9 @@ export const LojaPage = () => {
             <strong>R$ {jogoAleatorio.preco}</strong>
 
             <button>Comprar agora</button>
-            <button className="btn-detalhes"onClick={() => navigate(`/jogo/${jogo.id}`)}>
+            <button
+             className="btn-detalhes"
+              onClick={() => navigate(`/jogo/${jogoAleatorio.id}`)}>
               Ver detalhes
             </button>
           </div>

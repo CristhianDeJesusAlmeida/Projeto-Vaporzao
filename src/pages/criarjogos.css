@@ -1,0 +1,93 @@
+.criar-jogo-container {
+  width: min(750px, 90%);
+  margin: 40px auto;
+  padding: 32px;
+
+  background: #151127;
+  border: 1px solid #302747;
+  border-radius: 18px;
+
+  color: white;
+}
+
+.criar-jogo-container h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.criar-jogo-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.criar-jogo-container input,
+.criar-jogo-container textarea {
+  width: 100%;
+
+  background: #0d0a1b;
+  border: 1px solid #302747;
+  border-radius: 10px;
+
+  padding: 14px;
+  color: white;
+  font-size: 15px;
+
+  outline: none;
+  transition: 0.2s;
+}
+
+.criar-jogo-container input:focus,
+.criar-jogo-container textarea:focus {
+  border-color: #7045ea;
+  box-shadow: 0 0 10px rgba(112, 69, 234, 0.3);
+}
+
+.criar-jogo-container textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.criar-jogo-container input::placeholder,
+.criar-jogo-container textarea::placeholder {
+  color: #8f8aa7;
+}
+
+.criar-jogo-container button {
+  height: 48px;
+
+  background: #7045ea;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.criar-jogo-container button:hover {
+  background: #8b5cf6;
+  transform: translateY(-2px);
+}
+
+.criar-jogo-container button:active {
+  transform: translateY(0);
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .criar-jogo-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .criar-jogo-container h2 {
+    font-size: 24px;
+  }
+}
