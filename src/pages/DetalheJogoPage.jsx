@@ -24,17 +24,12 @@ export const DetalheJogoPage = () => {
     return media.toFixed(1);
   };
 
-  if (isLoading) {
-    return <h2 className="detalhe-status">Carregando jogo...</h2>;
-  }
+  {isLoading && <h2 className="detalhe-status">Carregando jogo...</h2>};
 
-  if (error) {
-    return <h2 className="detalhe-status erro">Erro: {error}</h2>;
-  }
+  {error && <h2 className="detalhe-status erro">Erro: {error}</h2>};
 
-  if (!jogo) {
-    return <h2 className="detalhe-status">Jogo não encontrado.</h2>;
-  }
+  {!jogo && <h2 className="detalhe-status">Jogo não encontrado.</h2>};
+
 
   return (
     <main className="detalhe-page">
@@ -168,6 +163,25 @@ export const DetalheJogoPage = () => {
           </div>
         </div>
       </section>
+      
+      {jogo.conquistas && jogo.conquistas.length > 0 && (
+        <section className="detalhe-conquistas">
+          <h2>🏆 Conquistas ({jogo.conquistas.length})</h2>
+          <div className="conquistas-grid">
+            {jogo.conquistas.map((conquista) => (
+              <div 
+                className="conquista-card" 
+                key={conquista.id}>
+
+                <div>
+                  <h4>{conquista.titulo}</h4>
+                  {conquista.descricao && <p style={{ color: "white", alignItems: "center"}}>{conquista.descricao}</p>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {jogo.reviews && jogo.reviews.length > 0 && (
         <section className="detalhe-reviews">
