@@ -1,5 +1,5 @@
 import "./biblioteca.css"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useRequestData } from "../hooks/useRequestData"
 import { JogoCard } from "../components/JogoCard"
 import { api } from "../services/api"
@@ -10,6 +10,7 @@ export const BibliotecaPage = () => {
     const [exclusaoErro, setExclusaoErro] = useState("")
     const [atualizacaoErro, setAtualizacaoErro] = useState("")
     const [jogoSendoEditado, setJogoSendoEditado] = useState(null)
+    const [listasGeneros, setListasGeneros] = useState([])
     const navigate = useNavigate()
     
     const [bibliotecaData, isLoading, error] = useRequestData(
@@ -23,8 +24,20 @@ export const BibliotecaPage = () => {
         desenvolvedora: "",
         lancamento: "",
         capaUrl: "",
-        generoIds: ""
+        generoIds: []
     })
+
+    useEffect(() => {
+        const pegarGeneros = async () => {
+            try {
+                const response = await api.get("/generos")
+                setListasGeneros(response.data)
+            } catch (err) {
+                console.error(err)
+            }
+        }
+        pegarGeneros()
+    }, [])
 
     const formatReleaseDate = (isoDate) => {
         return isoDate && new Date(isoDate).toLocaleDateString("pt-BR") || "N/A"
@@ -53,13 +66,22 @@ export const BibliotecaPage = () => {
             desenvolvedora: jogo.desenvolvedora || "",
             lancamento: jogo.lancamento ? jogo.lancamento.substring(0, 10) : "",
             capaUrl: jogo.capaUrl || "",
-            generoIds: jogo.generos ? jogo.generos.map(g => g.id).join(", ") : ""
+            generoIds: jogo.generos ? jogo.generos.map(g => Number(g.id)) : []
         })
     }
 
     const onChangeForm = (e) => {
         const { name, value } = e.target
         setForm({ ...form, [name]: value })
+    }
+
+    const handleCheckboxChange = (id) => {
+        const idNumero = Number(id)
+        const idsAtualizados = form.generoIds.includes(idNumero)
+            ? form.generoIds.filter((item) => item !== idNumero)
+            : [...form.generoIds, idNumero]
+
+        setForm({ ...form, generoIds: idsAtualizados })
     }
 
     const onSubmitForm = async (e) => {
@@ -73,8 +95,11 @@ export const BibliotecaPage = () => {
                 preco: Number(form.preco),
                 desenvolvedora: form.desenvolvedora,
                 lancamento: new Date(form.lancamento).toISOString(),
-                capaUrl: form.capaUrl,
-                generoIds: form.generoIds.split(",").map(id => Number(id.trim()))
+                generoIds: form.generoIds
+            }
+
+            if (form.capaUrl.trim() !== "") {
+                body.capaUrl = form.capaUrl.trim()
             }
 
             await api.patch(`/jogos/${jogoSendoEditado.id}`, body, { headers: { token } })
@@ -208,16 +233,21 @@ export const BibliotecaPage = () => {
             name="capaUrl"
             value={form.capaUrl}
             onChange={onChangeForm}
-            required
           />
 
-          <label>IDs dos gêneros</label>
-          <input
-            name="generoIds"
-            value={form.generoIds}
-            onChange={onChangeForm}
-            required
-          />
+          <div className="generos-checkbox-container">
+            <label style={{ display: 'block', margin: '10px 0 5px' }}>Gêneros</label>
+            {listasGeneros.map((genero) => (
+              <label key={genero.id} style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: '5px 0' }}>
+                <input
+                  type="checkbox"
+                  checked={form.generoIds.includes(genero.id)}
+                  onChange={() => handleCheckboxChange(genero.id)}
+                />
+                {genero.nome}
+              </label>
+            ))}
+          </div>
 
           <div className="form-actions">
             <button type="submit" className="btn-salvar">
