@@ -61,7 +61,7 @@ export const HomePage = () => {
                       {iconesPorCategoria[genero.nome] || <MoreHorizontal size={28} />}
                       </div>
                       <h3>{genero.nome}</h3>
-                      <p>Ver jogos</p>
+                      
                     </div>))
                   }
                 </div>
