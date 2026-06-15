@@ -300,3 +300,7 @@ footer {
     margin: 0 20px;
   }
 }
+button:hover {
+  background: #8b5cf6;
+  cursor: pointer;
+}

@@ -139,7 +139,17 @@ export const SobrePage = () =>{
 
         <div className="socials">
           Redes sociais:
-        
+            <button onClick={() => alert("Abrindo Instagram...")}>
+              Instagram
+            </button>
+
+            <button onClick={() => alert("Abrindo Discord...")}>
+              Discord
+            </button>
+
+            <button onClick={() => alert("Abrindo TikTok...")}>
+              TikTok
+            </button>
         </div>
       </section>
 
